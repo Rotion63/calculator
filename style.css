@@ -86,14 +86,13 @@ body{
 }
 
 body{
-    display: flex;
-    justify-content: center;
     background: url(./background.jpg);
 }
 
 .mainWrapper{
     width: 250px;
     height: 350px;
+    margin-left: 550px;
     margin-top: 150px;
     border: black;
     border-style: solid;
@@ -158,4 +157,26 @@ body{
     background-color: grey;
     box-shadow: black;
     cursor: pointer;
+}
+
+footer{
+    color: blue;
+    margin-top: 100px;
+    margin-left: 525px;
+}
+
+@media screen and (max-width: 1024px) {
+
+    body{
+        display: inline;
+        justify-content: center;
+    }
+
+    .mainWrapper{
+        margin: 100px;
+    }
+
+    footer{
+        margin-left:75px;
+    }
 }
