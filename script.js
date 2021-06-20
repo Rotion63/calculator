@@ -9,9 +9,11 @@ let operator = '';
 let count =0;
 let lengthCount =0;
 let bigNo = 999999999999999;
+let smallNo = 0.000000000001;
+
+
 
 // asking for first number
-
 keys.forEach(key => {
     key.addEventListener('click',(e) => {
 
@@ -26,8 +28,13 @@ keys.forEach(key => {
 
 
 const firstFunction = (userInput) => { //put userInput it firstNumber
+    if (lengthCount <= 15){
+
     firstNumber += userInput;
     display.textContent = firstNumber;
+    lengthCount++;
+
+}
 }
 
 const operatorFunction = (userInput) => {//put userInput and put it in operator and put count to 1;
@@ -36,10 +43,12 @@ const operatorFunction = (userInput) => {//put userInput and put it in operator 
     operator = userInput;
     display.textContent = firstNumber;
     count = 1;
+    lengthCount = 0;
 
     }else if(firstNumber != '' && secondNumber != ''){
         checkFunction(firstNumber,secondNumber);
         operator = userInput;
+        lengthCount = 0;
 
     }
 }
@@ -54,8 +63,11 @@ keys.forEach(key => {
 });
 
 const secondFunction = (userInput) => {//when number is pressed it stores in second number. Here count is 1
+    if(lengthCount <= 15){
     secondNumber += userInput;
     display.textContent = secondNumber;
+    lengthCount++;
+    }
 }
 
 keys.forEach(key => {
@@ -88,24 +100,28 @@ const calculationFunction = (valueA,valueB) => {//when both firstNumber is non e
 
     if(operator == '+'){
         finalNumber = Number(valueA) + Number(valueB);
+        finalNumber = (finalNumber >= bigNo || finalNumber <= smallNo)? finalNumber.toExponential(3):finalNumber; //if finalNumber is greater than big no. or less than small no. then shows the value in exponential form.
         display.textContent = finalNumber;
         firstNumber = finalNumber;
         secondNumber ='';
 
     }else if(operator == '-'){
         finalNumber = Number(valueA) - Number(valueB);
+        finalNumber = (finalNumber >= bigNo || finalNumber <= smallNo)? finalNumber.toExponential(3):finalNumber;
         display.textContent = finalNumber;
         firstNumber = finalNumber;
         secondNumber ='';
 
     }else if(operator == '*'){
         finalNumber = Number(valueA) * Number(valueB);
+        finalNumber = (finalNumber >= bigNo || finalNumber <= smallNo)? finalNumber.toExponential(3):finalNumber;
         display.textContent = finalNumber;
         firstNumber = finalNumber;
         secondNumber ='';
 
     }else if(operator == '/'){
         finalNumber = Number(valueA) / Number(valueB);
+        finalNumber = (finalNumber >= bigNo || finalNumber <= smallNo)? finalNumber.toExponential(3):finalNumber;
         display.textContent = finalNumber;
         firstNumber = finalNumber;
         secondNumber ='';
@@ -122,13 +138,20 @@ const calculationFunction = (valueA,valueB) => {//when both firstNumber is non e
                 secondNumber = '';
                 count = 0;
                 display.textContent = 0;
+                lengthCount = 0;
             }else if(e.target.id == 'delete'){
                 if(count == 0){
                     firstNumber = firstNumber.slice(0,-1);
                     display.textContent = firstNumber;
+                    if(lengthCount>0){
+                        lengthCount--;
+                    }
                 }else if(count == 1){
                     secondNumber = secondNumber.slice(0,-1);
                     display.textContent = secondNumber;
+                    if(lengthCount>0){
+                        lengthCount--;
+                    }
                 }
             }
         })
