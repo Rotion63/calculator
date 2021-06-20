@@ -1,0 +1,161 @@
+/*
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.mainWrapper{
+    width: 300px;
+    height: 400px;
+    margin-top: 50px;
+    border: black;
+    border-style: solid;
+    background-color: rgb(66, 62, 62);
+    border-radius: 5px;
+
+}
+
+.displaySection{
+    width: 280px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 7.5px;
+    border:black;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: rgb(143, 140, 140);
+}
+
+.outputSection{
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.clearAndDelete{
+    display: flex;
+    justify-content: start;
+    column-gap: 25px;
+}
+#clear,#delete{
+    color:black;
+    background-color:rgb(245, 73, 73);
+}
+
+
+.keySection{
+    display: grid;
+    justify-content: space-around;
+    height: 300px;
+    grid-template-columns: 70px 70px 70px 70px;
+}
+
+.keys{
+    display:flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border:black;
+    border-width: 0.01px;
+    border-style: solid;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 40px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.keys:hover{
+    scale: 1.1;
+    background-color: grey;
+    box-shadow: black;
+    cursor: pointer;
+}
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background: url(./background.jpg);
+}
+
+.mainWrapper{
+    width: 250px;
+    height: 350px;
+    margin-top: 150px;
+    border: black;
+    border-style: solid;
+    background-color: rgb(66, 62, 62);
+    border-radius: 10px;
+
+}
+
+.displaySection{
+    width: 230px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 7.5px;
+    border:black;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: rgb(143, 140, 140);
+}
+
+.outputSection{
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.clearAndDelete{
+    display: flex;
+    justify-content: start;
+    column-gap: 10px;
+}
+#clear,#delete{
+    color:black;
+    background-color:rgb(245, 73, 73);
+}
+
+
+.keySection{
+    display: grid;
+    justify-content: space-around;
+    height: 200px;
+    grid-template-columns: 60px 60px 60px 60px;
+}
+
+.keys{
+    display:flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border:black;
+    border-width: 0.01px;
+    border-style: solid;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 40px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.keys:hover{
+    scale: 1.1;
+    background-color: grey;
+    box-shadow: black;
+    cursor: pointer;
+}
